@@ -1,0 +1,29 @@
+[package]
+name = "all"
+edition = "2021"
+version = "0.0.1"
+build = "build.rs"
+description = "All of the crates, inconveniently bundled in a single crate!"
+license = "GPL-3.0-or-later"
+publish = true
+readme = "README.md"
+repository = "https://github.com/arrudagates/rust-all"
+authors = ["Gabriel Facco de Arruda <arrudagates@gmail.com>"]
+
+[dependencies]
+
+[build-dependencies]
+cargo_toml = "*"
+rayon = "*"
+toml = "*"
+
+[build-dependencies.crates-index]
+version = "*"
+features = ["git", "parallel", "git-performance"]
+
+[lib]
+path = "src/lib.rs"
+name = "all"
+edition = "2021"
+crate-type = ["rlib"]
+required-features = []
