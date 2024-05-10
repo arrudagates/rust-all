@@ -32,13 +32,11 @@ fn main() {
     // let mut use_statements: Vec<String> = Vec::new();
 
     for name in crates {
-        if name.starts_with("zz") {
-            manifest
-                .dependencies
-                .insert(name.clone(), Dependency::Simple(String::from("*")));
+        manifest
+            .dependencies
+            .insert(name.clone(), Dependency::Simple(String::from("*")));
 
-            //   use_statements.push(format!("pub use {};", name.replace('-', "_")));
-        }
+        //   use_statements.push(format!("pub use {};", name.replace('-', "_")));
     }
 
     let mut manifest_file = File::options()
